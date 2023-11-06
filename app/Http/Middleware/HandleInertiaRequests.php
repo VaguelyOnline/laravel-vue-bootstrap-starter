@@ -21,6 +21,7 @@ class HandleInertiaRequests extends Middleware
      * The set of routes that should be rendered with the Tailwind template
      */
     private $tailwindRoutes = [
+        'welcome',
         'dashboard',
         'profile.edit',
         'profile.update',
