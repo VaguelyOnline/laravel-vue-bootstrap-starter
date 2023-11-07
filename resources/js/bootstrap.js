@@ -7,6 +7,11 @@
 import axios from 'axios';
 window.axios = axios;
 
+const csrfMeta = document.getElementById('csrf');
+
+if (csrfMeta)
+    window.axios.defaults.headers.common['X-XSRF-TOKEN'] = csrfMeta.content;    
+
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**

@@ -24,7 +24,10 @@ const form = useForm({
 
 const submit = () => {
     form.post(route('login'), {
-        onSuccess: () => window.location.reload(),
+        onSuccess: () => {
+            document.body.style.display = 'none';
+            window.location.reload();
+        },
         onFinish: () => form.reset('password'),
     });
 };

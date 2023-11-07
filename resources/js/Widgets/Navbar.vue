@@ -50,6 +50,17 @@ export default {
                     </li>
                 </ul>
             </div>
+            <span v-if="$page.props.auth.user" class="navbar-text me-2">
+                {{ $page.props.auth.user.name }}
+            </span>
+            <span class="navbar-text">
+                <form class="d-flex" v-if="$page.props.auth.user" :action="route('logout')" method="post">
+                    <input type="hidden" name="_token" :value="$page.props.csrf_token">
+                    <button class="btn btn-outline-secondary">
+                        Log out
+                    </button>
+                </form>
+            </span>
         </div>
     </nav>
 </template>
